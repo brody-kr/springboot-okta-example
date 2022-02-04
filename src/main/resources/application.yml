@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          okta:
+            user-name-attribute: email
+
+okta:
+  oauth2:
+    redirect-uri: /authorization-code/callback
+    scopes:
+      - profile
+      - email
+      - openid
+      - address
+    client-id: #client-id
+    client-secret: #client-secret
+    issuer: #okta domain
